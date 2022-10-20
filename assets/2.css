@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.UserList {
+    width: 100%;
+    padding: 1rem;
+    max-width: 768px;
+    margin: 18%;
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 4rem;
+}
+
+.User {
+    position: relative;
+    width: 392px;
+    height: 248px;
+    border-radius: .5rem;
+    box-shadow: 0 3px 20px rgba(0,0,0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.User__avatar {
+    top: -50%;
+    margin-left: 28%;
+    width: 100px;
+    height: 100px;
+    transform: translateX(-50%);
+    border-radius: 33%;
+    box-shadow: 0 6px 40px rgba(0,0,0, 0.1);
+}
+.User__name {
+    position: relative
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1.75rem 0 .125rem 0;
+}
+.User__email {
+    position: relative
+    font-size: .75rem;
+    color: #777777;
+}
+
+.img{
+    transition: transform .2s;
+}
+
+.User::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  .User:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .User::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: hsl(200 100% 80%);
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+  
+
+.User__avatar:hover{
+    transition: transform .2s;
+    box-shadow: 0 12px 80px rgba(0,1,0, 0.1);
+}
